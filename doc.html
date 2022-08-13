@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Test</title>
+    <script src="https://sdk.inbenta.io/chatbot/1/inbenta-chatbot-sdk.js"></script>
+</head>
+<body>
+<script>
+  var authorization = {
+    domainKey:"github.io",
+    inbentaKey:"BeYO7c721GqNxpMk+WDfmutqPahWzr6+iI2mW3gBPEU="
+  }
+  InbentaChatbotSDK.buildWithDomainCredentials(authorization,
+    {
+      lang:'en',
+      answers:{
+        answerAttributes: ['ANSWER_TEXT'],
+        sideBubbleAttributes: ['SIDEBUBBLE_TEXT'],
+        maxRelatedContents: 3,
+      },
+      proactiveWelcome : true,
+      delayOnAnswer: 700,
+      usertype: 0,
+      environment: "development",
+      launcher: {
+        title:"InbentaBotSDK"
+      },
+      labels: {
+        en: {
+          'yes' : 'Sure',
+          'no' : 'Nope',
+          'generic-error-message' : 'Please try to answer again',
+          'enter-question' : 'Ask here',
+          'interface-title' : 'SDK Demo',
+          'guest-name' : 'You',
+          'help-question' : 'What can I help you with?',
+          'thanks' : 'Thank you!',
+          'rate-content' : 'Did it help?',
+          'form-message' : 'Please tell us why',
+          'submit' : 'Send'
+        }
+      },
+      ratingOptions: [
+        {
+          id: 1,
+          label: 'yes',
+          comment: false
+        },
+        {
+          id: 2,
+          label: 'no',
+          comment: true
+        }
+      ],
+    }
+  );
+</script>
+</body>
+</html>
